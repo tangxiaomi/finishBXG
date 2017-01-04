@@ -13,10 +13,16 @@ define(['jquery', 'template', 'cookie'], function ($, template) {
 	// 设置用户信息
 	var loginfo = $.cookie('loginfo') && JSON.parse($.cookie('loginfo'));
 
-	var html = template('tpl', loginfo);
+	var source = '<!-- 头像 -->';
+	source += '<div class="avatar img-circle">';
+	source += '<img src="<%= tc_avatar %>">';
+	source += '</div>'
+    source += '<h4><%= tc_name %></h4>';
+    
+	var render = template.compile(source);
+	var html = render(loginfo);
 
 	$('.aside .profile').html(html);
-
 });
 
 
