@@ -1,5 +1,5 @@
 
-define(['jquery'], function ($) {
+define(['jquery', 'cookie'], function ($) {
 
     // 登录功能需要后端做验证
     // 前端需要将用户输入的用户名和密码发送到服务端
