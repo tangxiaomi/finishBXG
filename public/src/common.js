@@ -35,7 +35,7 @@ define(['jquery', 'template', 'cookie'], function ($, template) {
     source += '<h4><%= tc_name %></h4>';
     
 	var render = template.compile(source);
-	var html = render(loginfo);
+	var html = render(loginfo || {});
 
 	$('.aside .profile').html(html);
 });
