@@ -544,6 +544,9 @@ a:focus {
   max-width: 100%;
   width: auto;
 }
+.main .course-add .picture .upfile {
+  overflow: hidden;
+}
 .main .course-add .picture .tips {
   margin: 20px 0;
   width: 400px;

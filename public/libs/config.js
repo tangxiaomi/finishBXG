@@ -5,6 +5,8 @@ require.config({
 		jquery: 'assets/jquery/jquery',
 		cookie: 'assets/jquery-cookie/jquery.cookie',
 		bootstrap: 'assets/bootstrap/js/bootstrap.min',
+		uploadify: 'assets/uploadify/jquery.uploadify.min',
+		Jcrop: 'assets/Jcrop/js/Jcrop.min',
 		form: 'assets/jquery-form/jquery.form',
 		region: 'assets/jquery-region/jquery.region',
 		validate: 'assets/jquery-validate/jquery-validate.min',
@@ -21,8 +23,14 @@ require.config({
 		validate: {
 			deps: ['jquery']
 		},
-		language: {
+		Jcrop: {
 			deps: ['jquery']
+		},
+		uploadify: {
+			deps: ['jquery']
+		},
+		language: {
+			deps: ['jquery', 'datepicker']
 		},
 		ckeditor: {
 			exports: 'CKEDITOR'

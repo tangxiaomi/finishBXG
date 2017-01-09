@@ -3,7 +3,7 @@
 ** 更改个人资料
 */
 
-define(['jquery', 'template', 'ckeditor', 'region', 'datepicker', 'language', 'form'], function ($, template, CKEDITOR) {
+define(['jquery', 'template', 'ckeditor', 'region', 'datepicker', 'language', 'form', 'uploadify'], function ($, template, CKEDITOR) {
 
 	var profile = $('#profile');
 
@@ -33,6 +33,23 @@ define(['jquery', 'template', 'ckeditor', 'region', 'datepicker', 'language', 'f
 				        { name: 'document',    groups: [ 'mode', 'document', 'doctools' ] },
 				        { name: 'others' }
 					]
+				});
+
+				// 头像上传并预览
+				$('#upfile').uploadify({
+					buttonText: '',
+					width: 120,
+					height: 120,
+					itemTemplate: '<span></span>',
+					fileObjName: 'tc_avatar',
+					uploader: '/api/uploader/avatar',
+					swf: '/public/assets/uploadify/uploadify.swf',
+					onUploadSuccess: function (file, data) {
+						data = JSON.parse(data);
+						if(data.code == 200) {
+							$('.preview img').attr('src', data.result.path);
+						}
+					}
 				});
 			}
 		}

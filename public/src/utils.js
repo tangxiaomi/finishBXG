@@ -7,7 +7,9 @@ define(['jquery'], function ($) {
 	return {
 		// 设置选中状态
 		setMenu: function (active) {
-			$('.navs a[href="' + active + '"]').addClass('active');
+			$('.navs a[href="' + active + '"]')
+			.addClass('active')
+			.closest('ul').show();
 		},
 		qs: function (key) {
 			// location.search 包含地址参数
