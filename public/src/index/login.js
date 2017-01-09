@@ -27,7 +27,6 @@ define(['jquery', 'cookie'], function ($) {
             data: formData,
             success: function (info) {
                 if(info.code == 200) {
-                    alert(info.msg);
 
                     // cookie 只能字符串类型
                     $.cookie('loginfo', JSON.stringify(info.result), {path: '/'});
